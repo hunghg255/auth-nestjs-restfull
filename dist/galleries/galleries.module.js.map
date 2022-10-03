@@ -1,0 +1,1 @@
+{"version":3,"file":"galleries.module.js","sourceRoot":"","sources":["../../src/galleries/galleries.module.ts"],"names":[],"mappings":";;;;;;;;;AAAA,2CAAwC;AACxC,iEAA6D;AAC7D,2DAAuD;AAOhD,IAAM,eAAe,GAArB,MAAM,eAAe;CAAG,CAAA;AAAlB,eAAe;IAL3B,IAAA,eAAM,EAAC;QACN,OAAO,EAAE,EAAE;QACX,WAAW,EAAE,CAAC,0CAAmB,CAAC;QAClC,SAAS,EAAE,CAAC,oCAAgB,CAAC;KAC9B,CAAC;GACW,eAAe,CAAG;AAAlB,0CAAe"}
