@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { account as user } from 'src/mock-data/users';
+import { account as user } from '../mock-data/users';
 import * as jwt from 'jsonwebtoken';
 
 @Injectable()
