@@ -1,0 +1,58 @@
+GET http://localhost:3000/posts?page=6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluUmVmcmVzaCIsImlhdCI6MTY2NDgyNDkzMywiZXhwIjoxNjY0ODI0OTkzfQ.d1h0hv5jozb6zcV75BXLNijg-_MIv1uooxf_qO7v2Os
+
+###
+POST http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluUmVmcmVzaCIsImlhdCI6MTY2NDgyMzc3OSwiZXhwIjoxNjY0ODIzODM5fQ.ArMn2OtfK040Hjzm0HW8oVuDT-WqxXUGyJOs8Djcpes
+Content-Type: application/json
+
+{
+  "title": "admin 111",
+  "description": "Test",
+  "tags": ["HTML", "CSS"]
+}
+
+###
+PATCH  http://localhost:3000/posts/f98f1014-9c2d-47fb-bd1e-0954fecb9f4a
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluUmVmcmVzaCIsImlhdCI6MTY2NDgyNDc2MywiZXhwIjoxNjY0ODI0ODIzfQ.1qtbx5mvscjcV8UxCcBSgphHk8ZrV0F_0oZ6Lz1fhwo
+Content-Type: application/json
+
+{
+  "title": "Update 1111111",
+  "tags": ["HTML", "CSS"]
+}
+
+###
+DELETE  http://localhost:3000/posts/6220afd8-533c-437c-8cb6-d9be7f4953e8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluUmVmcmVzaCIsImlhdCI6MTY2NDgyNDkzMywiZXhwIjoxNjY0ODI0OTkzfQ.d1h0hv5jozb6zcV75BXLNijg-_MIv1uooxf_qO7v2Os
+
+###
+GET  http://localhost:3000/posts/tags
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluUmVmcmVzaCIsImlhdCI6MTY2NDgyNDMzNCwiZXhwIjoxNjY0ODI0Mzk0fQ.d7BW2dHBZp7TVvJdRKQBZEOHRBfRXx8FwQFPZrpyz5I
+
+
+###
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "username": "adminRefresh"
+}
+
+###
+
+POST http://localhost:3000/auth/refresh-token
+Content-Type: application/json
+
+{
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0ODIxNjAxLCJleHAiOjE2Njc0MTM2MDF9.7v4sbCHQeJjcchfdiqi8S2ld_IxjC5vbsq5nC4QF2qA"
+}
+
+###
+
+DELETE http://localhost:3000/auth/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0ODIxNjY1LCJleHAiOjE2NjQ5MDgwNjV9.qsU-dL2F0XG94Yqhd6NWpK1wUEmw4ueiwAGW7x9ULfk
+
+###
+GET http://localhost:3000/galleries
