@@ -4,7 +4,8 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, { cors: false });
-
+  app.enableCors();
+  
   const config = new DocumentBuilder()
     .setTitle('Agiletech test')
     .setVersion('1.0')
