@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 import { Injectable } from '@nestjs/common';
-import { postDummy } from 'src/mock-data/posts';
-import { tags } from 'src/mock-data/tags';
+import { postDummy } from '../mock-data/posts';
+import { tags } from '../mock-data/tags';
 
 @Injectable()
 export class PostsService {

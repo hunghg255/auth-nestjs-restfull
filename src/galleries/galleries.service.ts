@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { galleries } from 'src/mock-data/galleries';
+import { galleries } from '../mock-data/galleries';
 
 @Injectable()
 export class GalleriesService {
