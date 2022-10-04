@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common';
-import { account } from '../mock-data/users';
+import { account as user } from '../mock-data/users';
 import * as jwt from 'jsonwebtoken';
-
-let USERS = account;
 
 @Injectable()
 export class AuthService {
+  account = user;
+
   login(username: string) {
-    const user = USERS.find((user) => user.username === username);
+    const user = this.account.find((user) => user.username === username);
 
     if (!user)
       return {
@@ -26,7 +26,9 @@ export class AuthService {
         code: 401,
       };
 
-    const user = USERS.find((user) => user.refreshToken === refreshToken);
+    const user = this.account.find(
+      (user) => user.refreshToken === refreshToken,
+    );
     if (!user)
       return {
         code: 403,
@@ -47,9 +49,9 @@ export class AuthService {
   }
 
   logout(username) {
-    const user = USERS.find((user) => user.username === username);
+    const user = this.account.find((user) => user.username === username);
     this.updateRefreshToken(user.username, null);
-    console.log(USERS);
+    console.log(this.account);
 
     return {
       code: 204,
@@ -78,7 +80,7 @@ export class AuthService {
   }
 
   updateRefreshToken(username, refreshToken) {
-    USERS = USERS.map((user) => {
+    this.account = this.account.map((user) => {
       if (user.username === username)
         return {
           ...user,
