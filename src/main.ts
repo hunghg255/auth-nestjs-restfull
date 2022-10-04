@@ -4,7 +4,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.enableCors({ origin: 'null', credentials: true });
+  app.enableCors({ origin: 'localhost' });
 
   const config = new DocumentBuilder()
     .setTitle('Agiletech test')
