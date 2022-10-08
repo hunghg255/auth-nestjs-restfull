@@ -2,7 +2,6 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import helmet from 'helmet';
-import { Logger } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -24,8 +23,8 @@ async function bootstrap() {
       displayOperationId: true,
     },
   });
-
-  await app.listen(3000);
-  console.log(`Server started running on http://localhost:3000`, 'Bootstrap');
+  const PORT = process.env.PORT || 3000;
+  await app.listen(PORT);
+  console.log(`Server started running on http://localhost:${PORT}`);
 }
 bootstrap();
