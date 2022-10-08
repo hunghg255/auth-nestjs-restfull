@@ -18,7 +18,6 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
 
   SwaggerModule.setup('api', app, document, {
-    customCssUrl: 'https://api-test1.vercel.app/swagger-ui.css',
     swaggerOptions: {
       displayOperationId: true,
     },
