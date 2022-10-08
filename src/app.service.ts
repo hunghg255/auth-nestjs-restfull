@@ -4,7 +4,7 @@ import { Injectable } from '@nestjs/common';
 export class AppService {
   getHello(): string {
     return `<h1>Welcome to Agiletech Test</h1>
-    <a href="http://38.242.142.81/api" target="_blank">Link Swagger</a>
+    <a href="http://38.242.142.81:5001/api" target="_blank">Link Swagger</a>
     <code style="font-size:16px">
       <h4>POST: /auth/login: Đăng nhập có accessToken, refreshToken (accessToken hết hạn sau 1 phút, refreshToken hết hạn sau 1 ngày)</h4>
       <h4>POST: /auth/refreshToken: Refresh token khi accessToken hết hạn</h4>
