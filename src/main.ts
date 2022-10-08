@@ -1,12 +1,10 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import helmet from 'helmet';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  app.use(helmet());
   app.enableCors();
 
   const config = new DocumentBuilder()
@@ -24,6 +22,6 @@ async function bootstrap() {
   });
   const PORT = process.env.PORT || 3000;
   await app.listen(PORT);
-  console.log(`Server started running on http://localhost:${PORT}`);
+  console.log(`Application is running on: ${await app.getUrl()}`);
 }
 bootstrap();
