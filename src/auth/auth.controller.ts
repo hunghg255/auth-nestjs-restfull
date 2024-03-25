@@ -19,7 +19,7 @@ export class AuthController {
     operationId: 'login',
     summary: 'Login',
     description:
-      'Account: admin, admin1, admin2, adminRefresh, adminRefresh1, adminRefresh2',
+      'Account: admin, admin1, admin2, adminRefresh, adminRefresh1, adminRefresh2, adminRefresh3, adminRefresh4, adminRefresh5, adminRefresh6, adminRefresh7, adminRefresh8, adminRefresh9, adminRefresh10',
   })
   @ApiBody({ type: LoginDtoReq })
   @ApiResponse({

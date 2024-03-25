@@ -26,16 +26,19 @@ export class AuthService {
         code: 401,
       };
 
-    const user = this.account.find(
-      (user) => user.refreshToken === refreshToken,
-    );
-    if (!user)
-      return {
-        code: 403,
-      };
-
     try {
-      jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
+      const { id } = jwt.verify(
+        refreshToken,
+        process.env.REFRESH_TOKEN_SECRET,
+      ) as any;
+
+      const user = this.account.find((user) => user.id === id);
+
+      if (!user) {
+        return {
+          code: 403,
+        };
+      }
 
       const tokens = this.generateTokens(user);
       this.updateRefreshToken(user.username, tokens.refreshToken);
