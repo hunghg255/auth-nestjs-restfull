@@ -1,0 +1,14 @@
+version: '3.5'
+
+services:
+  app:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PORT=${PORT}
+    ports:
+      - '50023:50023'
+    volumes:
+      - ./src:/app/src
